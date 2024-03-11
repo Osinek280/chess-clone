@@ -1,0 +1,12 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 25px;
+  border-bottom: 2px solid rgba(var(--callout-border-rgb), 0.3);
+}
+
+.logo{
+  font-size: 25px;
+}
