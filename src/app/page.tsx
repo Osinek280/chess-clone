@@ -1,8 +1,11 @@
+"use client"
 import styles from "./page.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy, faCrown } from '@fortawesome/free-solid-svg-icons'
 
 export default function Home() {
+  const partyCode = "sfgfdj"
+
   return (
     <>
       <div className={styles.side}>
@@ -11,9 +14,9 @@ export default function Home() {
           <input className={styles["user-box"]} placeholder="Username"/>
           <div className={styles["copy-box"]}>
             <p className={styles["user-box"]}>
-              Your Party Code: sfgfdj
+              Your Party Code: {partyCode}
             </p>
-            <span className={styles["icon-con"]}>
+            <span className={styles["icon-con"]} >
               <FontAwesomeIcon icon={faCopy} />
             </span>
           </div>
@@ -24,6 +27,7 @@ export default function Home() {
             </p>
           </div>
           <button className={styles["submit-btn"]}>Join To Party</button>
+          <button className={styles["submit-btn"]}>Create the Party</button>
         </div>
       </div>
       <div className={styles.side}>
@@ -45,6 +49,7 @@ export default function Home() {
           <span className={styles["party-player"]}>
             FrostFury
           </span>
+          <p>game for 2-5 players</p>
         </div>
         <button className={styles["submit-btn"]}>start</button>
       </div>

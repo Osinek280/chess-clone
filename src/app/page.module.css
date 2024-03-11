@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   padding: 15px;
   /* width: 430px; */
@@ -26,14 +26,16 @@
 .party-container{
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  text-align: center;
+  gap: 10px;
   border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   padding: 15px;
   min-width: 250px;
+  height: 300px;
 }
 
-.form, .party-container {
-  /* height: 350px; */
+.form, .party-container{
+  height: 300px;
 }
 
 .user-box {
@@ -96,4 +98,10 @@
   border: none;
   background: none;
   outline: none;
+}
+
+@media (max-width: 750px) {
+  .form, .party-container{
+    width: 310px;
+  }
 }
