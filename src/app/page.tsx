@@ -1,4 +1,3 @@
-"use client"
 import styles from "./page.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy, faCrown } from '@fortawesome/free-solid-svg-icons'
