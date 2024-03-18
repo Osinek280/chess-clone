@@ -1,0 +1,17 @@
+.user-box{
+  display: flex;
+  gap: 15px;
+  width: 600px;
+}
+
+.list-pieces{
+  display: flex;
+  gap: 5px;
+}
+
+.piece{
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-position: center; 
+}
