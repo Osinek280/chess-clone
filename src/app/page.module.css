@@ -1,107 +1,16 @@
-.form {
+.container{
+  height: 100%;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  padding: 15px;
-  /* width: 430px; */
-}
-
-.side{
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+  justify-content: center;
   align-items: center;
 }
 
-.party-player{
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border-radius: 6px;
-  padding: 10px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.party-container{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 10px;
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  padding: 15px;
-  min-width: 250px;
-  height: 300px;
-}
-
-.form, .party-container{
-  height: 300px;
-}
-
-.user-box {
-  display: flex;
-  align-items: center;
+.con {
   position: relative;
-  font-size: 0.85rem;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
-  width: 100%;
-}
-
-.submit-btn {
-  padding: 10px;
-  width: 100%;
-  background-color: #28a745;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  text-transform: uppercase;
-}
-
-.submit-btn:hover{
-  background-color: #218838;
-}
-
-.copy-box{
+  height: 600px;
   display: flex;
-  gap: 10px;
-}
-
-.icon-con{
-  display: flex;
-  padding: 10px 13px;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
-  cursor: pointer;
-}
-
-.icon-con:hover {
-  background-color: rgba(var(--callout-rgb), 1);
-}
-
-.icon-con svg{
-  width: 20px;
-}
-
-.crown-icon{
-  width: 15px;
-}
-
-.code-input{
-  width: 100px;
-  margin-left: 7px;
-
-  border: none;
-  background: none;
-  outline: none;
-}
-
-@media (max-width: 750px) {
-  .form, .party-container{
-    width: 310px;
-  }
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
 }

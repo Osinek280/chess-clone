@@ -27,11 +27,11 @@ export interface Piece {
 
 export interface TileProps {
   image?: string;
-  number: number;
-  highlight: boolean;
-  isSelected: boolean;
-  x: number;
-  y: number;
+  number?: number;
+  highlight?: boolean;
+  isSelected?: boolean;
+  x?: number;
+  y?: number;
 }
 
 export interface UserProps {
@@ -48,3 +48,8 @@ export interface User {
   time: number;
   capturedPieces: PieceType[];
 }
+
+export type ParamsProps = {
+  params?: any;
+  searchParams?: Record<string, string> | null | undefined;
+};

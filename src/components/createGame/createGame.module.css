@@ -1,0 +1,113 @@
+.model-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  display: flex;
+  height: 100%;
+  top: 0;
+}
+
+.model {
+  text-align: center;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  background: #312e2b;
+  width: 300px;
+  /* height: 80%; */
+  padding: 25px;
+  gap: 15px;
+  border-radius: 15px;
+}
+
+.radio-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.box-radio{
+  padding: 1px;
+  display: flex;
+  background: #f1f1f1;
+  border-radius: 8px;
+  height: 50px;
+  width: 50px;
+}
+
+.radio-input, .time-input{
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-icon{
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #312e2b;
+  font-size: 35px;
+}
+
+.radio-input:checked + div {
+  outline: 3px solid #81b64c; 
+  border-radius: 8px;
+}
+
+.time-input:checked + div {
+  outline: 3px solid #81b64c; 
+}
+
+.white {
+  background-image: url('/king_w.png');
+}
+
+.black {
+  background-image: url('/king_b.png');
+}
+
+.section-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: start;
+}
+
+.time-option{
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background: #5a5a5a;
+}
+
+.option-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-content: center;
+}
+
+.selected {
+  outline: 3px solid #81b64c;
+}
+
+.play-btn{
+  padding: 12px;
+  border-radius: 5px;
+  border: none;
+  background: #81b64c;
+}

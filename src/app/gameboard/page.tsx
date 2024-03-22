@@ -9,8 +9,8 @@ const whiteOne = TeamType.OUR;
 
 export default function Game() {
   const [turn, setTurn] = useState<TeamType>(TeamType.OUR)
-  const [opponent, setOponnent] = useState<User>({username: 'szymidzimi', time: 225, capturedPieces: [PieceType.BISHOP, PieceType.PAWN, PieceType.PAWN]})
-  const [our, setOur] = useState<User>({username: 'Osinek', time: 258, capturedPieces: [PieceType.ROOK, PieceType.KNIGHT, PieceType.QUEEN]})
+  const [opponent, setOponnent] = useState<User>({username: 'Bot', time: 225, capturedPieces: []})
+  const [our, setOur] = useState<User>({username: 'Osinek', time: 258, capturedPieces: []})
 
   function calculateCapturedPiecesValue(capturedPieces: PieceType[]): number {
     const pieceValues: Record<PieceType, number> = {
@@ -28,6 +28,8 @@ export default function Game() {
     });
     return totalValue;
   }
+
+  console.log(localStorage.getItem('game'))
   
   return (
     <div className={styles["container"]}>

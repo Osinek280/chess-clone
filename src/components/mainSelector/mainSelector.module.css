@@ -1,0 +1,89 @@
+.info-box {
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  /* border: 1px solid rgba(var(--callout-border-rgb), 0.3); */
+  min-width: 350px;
+  padding: 20px;
+}
+
+.btn-container{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn {
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  text-align: start;
+  padding: 15px 0;
+  transition: background-color 0.3s ease; 
+}
+
+.online {
+  background: #81b64c;
+}
+
+.online:hover {
+  background-color: #6a9643;
+}
+
+.computer {
+  background-color: #9e9e9e; /* Zmiana koloru tła po najechaniu myszką */
+
+}
+
+.computer:hover{
+  background: #808080; /* Kolor szary */
+}
+
+/* Dodanie koloru dla stacji stationary */
+.stationary {
+  background-color: #e2b502; /* Kolor tła dla stacjonarnej */
+}
+
+.stationary:hover {
+  background-color: #d4aa00; /* Kolor tła dla stacjonarnej */
+}
+
+.stationary .icon {
+  background: url('https://www.chess.com/bundles/web/images/color-icons/handshake.8c90be47.svg');
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.online .icon {
+  background: url('https://www.chess.com/bundles/web/images/color-icons/playwhite.cea685ba.svg');
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.computer .icon {
+  background: url('https://www.chess.com/bundles/web/images/color-icons/computer.f36f0d84.svg');
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.btn-title{
+  font-size: 13px;
+}
+
+.btn-subtitle{
+  font-size: 12px;
+}

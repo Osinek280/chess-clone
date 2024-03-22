@@ -288,18 +288,18 @@ export const initialBoardState: Piece[] = [
     image: `/pawn_w.png`,
     position: {
       x: 6,
-      y: 2,
+      y: 1,
     },
     type: PieceType.PAWN,
     team: TeamType.OUR,
   },
-  // {
-  //   image: `/pawn_w.png`,
-  //   position: {
-  //     x: 7,
-  //     y: 1,
-  //   },
-  //   type: PieceType.PAWN,
-  //   team: TeamType.OUR,
-  // },
+  {
+    image: `/pawn_w.png`,
+    position: {
+      x: 7,
+      y: 1,
+    },
+    type: PieceType.PAWN,
+    team: TeamType.OUR,
+  },
 ];

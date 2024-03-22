@@ -1,4 +1,6 @@
 .chessboard {
+  border-radius: 10px;
+  overflow: hidden;
   height: 100%;
   display: grid;
   grid-template-columns: repeat(8, calc(100% / 8));

@@ -2,9 +2,8 @@
 import { useEffect, useState } from "react";
 import Tile from "../tile/tile";
 import styles from "./chessboard.module.css"
-import { PieceType, Piece, Position, TeamType } from "@/Types";
+import { Piece, Position, TeamType } from "@/Types";
 import { getPossibleMoves, samePosition } from "@/rules/GeneralRules";
-import { getPossibleBishopMoves } from "@/rules/BishopRules";
 import { horizontalAxis, initialBoardState, verticalAxis } from "@/Constants";
 
 export default function Chessboard ({color} : {color: string}) {
@@ -19,10 +18,6 @@ export default function Chessboard ({color} : {color: string}) {
 
     if(element.getAttribute("data-selected")) {
       // strefa ruchu
-
-
-
-
     }else if (element.id === "chess-piece") {
       const x = parseInt(element.getAttribute("data-x") || "", 0);
       const y = parseInt(element.getAttribute("data-y") || "", 0);
@@ -79,9 +74,44 @@ export default function Chessboard ({color} : {color: string}) {
   }
 
   return (
-    <div 
-      className={styles.chessboard}
-      onClick={e => grabPiece(e)}
-    >{board}</div>
+    <div className={styles.chessboard} onClick={(e) => grabPiece(e)}>
+      {verticalAxis.map((number, j) => (
+        horizontalAxis.map((letter, i) => {
+          const number = j + i + 2;
+          const coordinates = `${horizontalAxis[i]}${verticalAxis[j]}`;
+  
+          const piece = pieces.find(
+            (p) => samePosition(p.position, { x: i, y: j })
+          );
+  
+          const image = piece
+            ? `/${piece?.type}_${piece?.team === 0 ? "b" : "w"}.png`
+            : undefined;
+  
+          const highlighted: boolean = possibleMove
+            ? possibleMove.find((el) => el.x === i && el.y === j) !== undefined
+            : false;
+  
+          const isSelected: boolean = selected
+            ? samePosition({ x: i, y: j }, selected)
+            : false;
+      
+          return (
+            <Tile
+              key={coordinates}
+              x={i}
+              y={j}
+              number={number}
+              image={image}
+              highlight={highlighted}
+              isSelected={isSelected}     
+
+            />
+          );
+        })
+      ))}
+    </div>
   );
+  
+  
 }
