@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './createGame.module.css';
 import { useRouter } from 'next/navigation';
-import { ParamsProps } from '@/Types';
+import { Game, ParamsProps } from '@/Types';
 
 
 interface game {
@@ -49,6 +49,20 @@ const timeOptions = [
   }   
 ]
 
+function chooseColor(selectedOption: number): string {
+  if (selectedOption === 1) {
+      return "white";
+  } else if (selectedOption === 3) {
+      return "black";
+  } else if (selectedOption === 2) {
+      const randomColorIndex = Math.random() < 0.5 ? 0 : 1; 
+      const colors = ["black", "white"];
+      return colors[randomColorIndex];
+  } else {
+      return "Niepoprawna opcja";
+  }
+}
+
 export default function CreateGame({ mode }: {mode?: string}) {
   const [selectedOption, setSelectedOption] = useState<number>(1); 
   const [selectedTime, setSelectedTime] = useState<{ time: number; inc: number }>(timeOptions[0].options[0]); 
@@ -60,23 +74,17 @@ export default function CreateGame({ mode }: {mode?: string}) {
   };
 
   function onSubmit() {
-    let color = undefined
-
-    if(colors[selectedOption] === 'random') {
-      const randomIndex = Math.floor(Math.random() * 2);
-      color = ['white', 'black'][randomIndex];
-    }else {
-      color = colors[selectedOption]
-    }
-
-
-    localStorage.setItem('game', JSON.stringify({
-      color: color,
+    const GameData: Game = {
+      color: chooseColor(selectedOption),
       inc: selectedTime.inc,
       time: selectedTime.time,
       turn: 0,
-      pieces: []
-    }));    
+      pieces: [],
+      ourPieces: [],
+      opponentPieces: []
+    };
+    
+    localStorage.setItem('game', JSON.stringify(GameData));     
 
     router.push(`/play/${mode}`)
   }

@@ -1,4 +1,4 @@
-import { Piece, PieceType, Position, TeamType } from "@/Types";
+import { Move, Piece, PieceType, Position, TeamType } from "@/Types";
 import { getPossibleBishopMoves } from "./BishopRules";
 import { getPossiblePawnMoves } from "./PawnRules";
 import { getPossibleRookMoves } from "./RookRules";
@@ -68,4 +68,21 @@ export const tileIsEmptyOrOccupiedByOpponent =(
 
 export function samePosition(p1: Position, p2: Position) {
   return p1.x === p2.x && p1.y === p2.y;
+}
+
+export function calculateCapturedPiecesValue(capturedPieces: PieceType[]): number {
+  const pieceValues: Record<PieceType, number> = {
+    [PieceType.PAWN]: 1,
+    [PieceType.KNIGHT]: 3,
+    [PieceType.BISHOP]: 3,
+    [PieceType.ROOK]: 5,
+    [PieceType.QUEEN]: 9,
+    [PieceType.KING]: 0
+  };
+
+  let totalValue = 0;
+  capturedPieces.forEach(piece => {
+    totalValue += pieceValues[piece];
+  });
+  return totalValue;
 }

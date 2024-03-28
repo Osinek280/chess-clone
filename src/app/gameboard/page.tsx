@@ -4,6 +4,7 @@ import styles from "./gameboard.module.css"
 import Chessboard from "@/components/chessboard/chessboard"
 import { PieceType, TeamType, User } from "@/Types"
 import { useState } from "react"
+import { calculateCapturedPiecesValue } from "@/rules/GeneralRules"
 
 const whiteOne = TeamType.OUR;
 
@@ -12,25 +13,6 @@ export default function Game() {
   const [opponent, setOponnent] = useState<User>({username: 'Bot', time: 225, capturedPieces: []})
   const [our, setOur] = useState<User>({username: 'Osinek', time: 258, capturedPieces: []})
 
-  function calculateCapturedPiecesValue(capturedPieces: PieceType[]): number {
-    const pieceValues: Record<PieceType, number> = {
-      [PieceType.PAWN]: 1,
-      [PieceType.KNIGHT]: 3,
-      [PieceType.BISHOP]: 3,
-      [PieceType.ROOK]: 5,
-      [PieceType.QUEEN]: 9,
-      [PieceType.KING]: 0
-    };
-  
-    let totalValue = 0;
-    capturedPieces.forEach(piece => {
-      totalValue += pieceValues[piece];
-    });
-    return totalValue;
-  }
-
-  console.log(localStorage.getItem('game'))
-  
   return (
     <div className={styles["container"]}>
       <div>

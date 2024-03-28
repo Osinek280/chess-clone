@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy, faCrown } from '@fortawesome/free-solid-svg-icons';
 import Chessboard from "@/components/chessboard/chessboard";
-import { horizontalAxis, initialBoardState, verticalAxis } from "@/Constants";
+import { HORIZONTALAXIS, initialBoardState, VERTICALAXIS} from "@/Constants";
 import { useState } from "react";
 import { samePosition } from "@/rules/GeneralRules";
 import { Piece, ParamsProps } from "@/Types";
@@ -45,10 +45,10 @@ export default function Home({ params, searchParams }: ParamsProps) {
         <div>
           <div className={styles["con"]}>
             <div className={chessStyles.chessboard}>
-              {verticalAxis.map((number, j) => (
-                horizontalAxis.map((letter, i) => {
+              {VERTICALAXIS.map((number, j) => (
+                HORIZONTALAXIS.map((letter, i) => {
                   const number = j + i + 2;
-                  const coordinates = `${horizontalAxis[i]}${verticalAxis[j]}`;
+                  const coordinates = `${HORIZONTALAXIS[i]}${VERTICALAXIS[j]}`;
 
                   const piece = pieces.find(
                     (p) => samePosition(p.position, { x: i, y: j })
@@ -62,6 +62,9 @@ export default function Home({ params, searchParams }: ParamsProps) {
                     <div key={`${i}-${j}`}>
                       <div
                         className={`${TileStyles[`${number && number % 2 === 0 ? 'black' : 'white'}-tile`]} `}
+                        onClick={() => {
+                          console.log(j)
+                        }}
                       >
                         {image && 
                           <div 
